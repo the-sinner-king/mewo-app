@@ -2,7 +2,6 @@ package moe.mewo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
     private void load() {
         loaded = false;
         wv.setWebViewClient(new WebViewClient() {
-            @Override public void onPageFinished(View v, String url) { loaded = true; }
+            @Override public void onPageFinished(WebView view, String url) { loaded = true; }
         });
         wv.loadUrl("http://127.0.0.1:8765");
         // the den comes up ~20s after boot; retry gently if Termux isn't ready yet
