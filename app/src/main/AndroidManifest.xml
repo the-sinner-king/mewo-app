@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- WebView must reach Mewo's den on loopback; without this the request
+         fails with net::ERR and the app renders the green-robot error page. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Mewo"
         android:icon="@mipmap/ic_launcher"
